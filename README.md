@@ -4,7 +4,7 @@
 
 - Git
 - Node.js
-  - v12.4.0 推奨
+  - v10.16.0 推奨
     - `.node-version` で指定
 - npm
   - v6以降
