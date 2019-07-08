@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import Heading from 'components/Common/Heading.vue';
+import Heading from "components/Common/Heading.vue";
 export default {
-  name: 'top',
+  name: "top",
   components: {
-    "heading": Heading
+    heading: Heading
   }
-}
+};
 </script>
 
 <style>

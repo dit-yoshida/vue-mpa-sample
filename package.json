@@ -14,12 +14,12 @@
     }
   },
   "lint-staged": {
-    "src/pages/login/index.js": [
+    "*.js": [
       "eslint --ext .js src --fix",
       "git add"
     ],
     "*.vue": [
-      "eslint --exlint --ext .vue src --fix",
+      "eslint --ext .vue src --fix",
       "git add"
     ]
   },

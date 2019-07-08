@@ -25,6 +25,7 @@ module.exports = {
     //debuggerの使用をしないよう強制する
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     //インデントを2つに揃えることを強制する、HTMLのように4つに揃えたい時は ["error", 2]と記載する
-    "vue/html-indent": ["error", 2]
+    "vue/html-indent": ["error", 2],
+    "no-undef": 'off'
   }
 }
