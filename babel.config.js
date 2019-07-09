@@ -1,17 +1,17 @@
-module.exports = function(api){
-  api.cache(true);
+module.exports = function(api) {
+  api.cache(true)
 
   const presets = [
     [
       //プリセットに@babel/preset-env を指定する
-      '@babel/preset-env',
+      "@babel/preset-env",
       {
         //サポートするブラウザ、この設定に応じて必要なpolyfillのみがimportされる
-        targets:{
-          ie: '11'
+        targets: {
+          ie: "11"
         },
         //必要なpolyfillのみをimportさせたい場合、'usage'を指定する
-        useBuiltIns: 'usage',
+        useBuiltIns: "usage",
         //polyfillを利用する core-js のバージョンを指定する(指定しないとバージョン２が利用され警告が出力される)
         corejs: 3,
         //Stage 4 未満のプロボーザルのpolyfillもimportされる
@@ -21,8 +21,8 @@ module.exports = function(api){
         debug: true
       }
     ]
-  ];
-  return{
+  ]
+  return {
     presets
-  };
-};
+  }
+}
