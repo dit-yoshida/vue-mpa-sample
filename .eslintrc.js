@@ -9,7 +9,7 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   plugins: [
-    'vue' ,
+    'vue',
     'prettier'
   ],
   rules: {
