@@ -1,16 +1,16 @@
 <template>
   <h1 class="component">
-    {{label}}
+    {{ label }}
   </h1>
 </template>
 
 <script>
 export default {
-  name: 'heading',
+  name: "heading",
   props: {
     label: String
   }
-}
+};
 </script>
 
 <style>
