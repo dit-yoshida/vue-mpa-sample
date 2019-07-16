@@ -6,11 +6,11 @@
 
 <script>
 export default {
-  name: "heading",
+  name: "Heading",
   props: {
     label: String
   }
-};
+}
 </script>
 
 <style>

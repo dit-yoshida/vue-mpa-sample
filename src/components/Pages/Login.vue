@@ -5,16 +5,16 @@
 </template>
 
 <script>
-import Heading from "components/Common/Heading.vue";
+import Heading from "components/Common/Heading.vue"
 export default {
-  name: "login",
+  name: "Login",
   components: {
     heading: Heading
   }
-};
+}
 </script>
 
-<style>
+<style lang="scss">
 .component {
   color: blue;
 }
