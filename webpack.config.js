@@ -13,8 +13,7 @@ const webpackConfig = {
   entry: {}, // 動的に生成
 
   output: {
-    path: path.resolve('dist'),
-    publicPath: DIST,
+    path: DIST,
     filename: '[name]'
   },
 
