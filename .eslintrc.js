@@ -20,7 +20,8 @@ module.exports = {
     // 'arrow-parens': 0,
     // //debuggerの使用をしないよう強制する
     // 'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    "no-undef": 'off',
+    //未定義の変数を使っていないかのチェック
+    "no-undef": 2,
     // 無駄なスペースは削除
     "no-multi-spaces": 2,
     // 不要な空白行は削除。2行開けてたらエラー
