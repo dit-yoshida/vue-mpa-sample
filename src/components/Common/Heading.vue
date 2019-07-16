@@ -13,7 +13,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .component {
   font-style: italic;
 }
