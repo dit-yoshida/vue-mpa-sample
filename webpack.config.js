@@ -34,8 +34,17 @@ const webpackConfig = {
           }
         }]
       },
-      { test: /\.vue$/, loader: 'vue-loader'},
-      { test: /\.css$/, use: [ 'vue-style-loader', 'css-loader' ]}
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
+            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
+          }
+        }
+      },
+      { test: /\.scss$/, use: [ 'vue-style-loader', 'css-loader', 'sass-loader' ]}
     ]
   },
 
@@ -74,6 +83,7 @@ glob.sync('**/**/*.js', {
     filename: htmlFileName,
     inject: 'body',
     includeSiblingChunks: true,
+    favicon: path.resolve(SRC_ROOT, 'assets/images/logos/favicon.ico'),
     chunks: ['vendor.js', jsFileName]
   }))
 })
