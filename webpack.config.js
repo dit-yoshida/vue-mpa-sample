@@ -50,8 +50,11 @@ const webpackConfig = {
 
   resolve: {
     alias: {
+      assets: path.resolve(SRC_ROOT, './assets'),
       components: path.resolve(SRC_ROOT, './components'),
-      pages: path.resolve(SRC_ROOT, './pages')
+      pages: path.resolve(SRC_ROOT, './pages'),
+      stores: path.resolve(SRC_ROOT, './stores'),
+      utils: path.resolve(SRC_ROOT, './utils')
     }
   },
 
