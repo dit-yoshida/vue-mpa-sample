@@ -1,5 +1,5 @@
 <template>
-  <h1 class="component">
+  <h1 class="components">
     {{ label }}
   </h1>
 </template>
@@ -13,8 +13,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.component {
+<style lang="scss" scoped>
+.components {
   font-style: italic;
 }
 </style>
