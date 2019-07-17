@@ -20,8 +20,8 @@ module.exports = {
     // 'arrow-parens': 0,
     // //debuggerの使用をしないよう強制する
     // 'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    //未定義の変数を使っていないかのチェック
-    "no-undef": 2,
+    // 未定義の変数を許可(Vue オブジェクト参照)
+    "no-undef": 0,
     // 無駄なスペースは削除
     "no-multi-spaces": 2,
     // 不要な空白行は削除。2行開けてたらエラー
@@ -38,5 +38,7 @@ module.exports = {
     "no-console": 0,
     // キー
     "key-spacing": 2,
+    // new 定義を許可
+    "no-new": 0
   }
 }
