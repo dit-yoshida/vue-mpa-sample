@@ -1,6 +1,9 @@
 <template>
   <div class="components">
     <heading :label="'初期ページ'" />
+    <span class="hyphens">
+      test test test
+    </span>
   </div>
 </template>
 
@@ -14,12 +17,16 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.component {
+<style lang="scss" scoped>
+.components {
   color: red;
 
   .heading {
     font-size: 0;
+  }
+
+  .hyphens {
+    hyphens: auto;
   }
 }
 </style>

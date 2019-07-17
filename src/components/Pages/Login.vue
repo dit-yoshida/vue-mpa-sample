@@ -1,5 +1,5 @@
 <template>
-  <div class="component">
+  <div class="components">
     <heading :label="'ログインページ'" />
   </div>
 </template>
@@ -14,8 +14,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.component {
+<style lang="scss" scoped>
+.components {
   color: blue;
 }
 </style>
