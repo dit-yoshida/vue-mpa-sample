@@ -7,7 +7,8 @@
     "start": "webpack-dev-server --mode development",
     "lint": "eslint src/components/Pages/Top.vue",
     "lint:css": "stylelint src/**/*.vue --fix",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest"
   },
   "husky": {
     "hooks": {
@@ -39,6 +40,7 @@
     "eslint-plugin-vue": "^5.2.3",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.0",
+    "jest": "^24.8.0",
     "lint-staged": "^9.1.0",
     "lodash-webpack-plugin": "^0.11.5",
     "node-sass": "^4.12.0",
@@ -58,5 +60,10 @@
     "core-js": "^3.1.4",
     "regenerator-runtime": "^0.13.2",
     "vue": "^2.6.10"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    }
   }
 }
