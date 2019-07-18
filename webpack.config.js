@@ -3,6 +3,7 @@ const glob = require('glob')
 const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 
 const ROOT = path.resolve(__dirname)
 const DIST = path.resolve(ROOT, './dist')
@@ -63,6 +64,7 @@ const webpackConfig = {
     new webpack.ProvidePlugin({
       Vue: ['vue/dist/vue.esm.js', 'default']
     }),
+    new LodashModuleReplacementPlugin()
   ],
 
   optimization: {

@@ -22,7 +22,11 @@ module.exports = function(api){
       }
     ]
   ];
+
+  const plugins = [ "lodash" ]
+
   return{
-    presets
+    presets,
+    plugins
   };
 };
