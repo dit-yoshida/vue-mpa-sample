@@ -1,4 +1,4 @@
-import "core-js/shim"
+import "core-js"
 import "regenerator-runtime/runtime"
 
 import add from "utils/testcodes/add"
