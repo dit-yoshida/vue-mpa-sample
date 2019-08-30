@@ -1,0 +1,122 @@
+commit 0f30333e62b3c15fc53016fae5ee5a984c305d30
+Author: Hidenori Matsui <matsui.hidenori@ditgroup.jp>
+Date:   Tue Jul 23 18:53:42 2019 +0900
+
+    add:Vuexの導入
+
+diff --git a/package-lock.json b/package-lock.json
+index ca360ec..03878ec 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -12426,6 +12426,12 @@
+       "integrity": "sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==",
+       "dev": true
+     },
++    "vuex": {
++      "version": "3.1.1",
++      "resolved": "https://registry.npmjs.org/vuex/-/vuex-3.1.1.tgz",
++      "integrity": "sha512-ER5moSbLZuNSMBFnEBVGhQ1uCBNJslH9W/Dw2W7GZN23UQA69uapP5GTT9Vm8Trc0PzBSVt6LzF3hGjmv41xcg==",
++      "dev": true
++    },
+     "w3c-hr-time": {
+       "version": "1.0.1",
+       "resolved": "https://registry.npmjs.org/w3c-hr-time/-/w3c-hr-time-1.0.1.tgz",
+diff --git a/package.json b/package.json
+index e8b4a7d..032c327 100644
+--- a/package.json
++++ b/package.json
+@@ -52,6 +52,7 @@
+     "stylelint-scss": "^3.9.1",
+     "vue-loader": "^15.7.0",
+     "vue-template-compiler": "^2.6.10",
++    "vuex": "^3.1.1",
+     "webpack": "^4.35.2",
+     "webpack-cli": "^3.3.5",
+     "webpack-dev-server": "^3.7.2"
+diff --git a/src/components/App.vue b/src/components/App.vue
+new file mode 100644
+index 0000000..3a7c59b
+--- /dev/null
++++ b/src/components/App.vue
+@@ -0,0 +1,23 @@
++<template>
++  <div class="messgae">
++    {{ message }}
++  </div>
++</template>
++
++<style lang="less" scoped>
++  @import "~less/variables";
++
++  .message {
++    color: @red;
++  }
++</style>
++
++<script>
++export default {
++  computed: {
++    ...mapState({
++      message: "message"
++    })
++  }
++}
++</script>
+\ No newline at end of file
+diff --git a/src/components/app.js b/src/components/app.js
+new file mode 100644
+index 0000000..682914a
+--- /dev/null
++++ b/src/components/app.js
+@@ -0,0 +1,9 @@
++import Vue from "vue"
++import store from "src/store"
++import App from "src/components/App.vue"
++
++new Vue({
++  el: "#app",
++  store,
++  render: h => h(App)
++})
+\ No newline at end of file
+diff --git a/src/pages/test/index.js b/src/pages/test/index.js
+index 7c34dbd..321e50f 100644
+--- a/src/pages/test/index.js
++++ b/src/pages/test/index.js
+@@ -1,4 +1,4 @@
+-import "core-js/shim"
++import "core-js"
+ import "regenerator-runtime/runtime"
+ 
+ import add from "utils/testcodes/add"
+diff --git a/src/store/index.js b/src/store/index.js
+new file mode 100644
+index 0000000..4603c6b
+--- /dev/null
++++ b/src/store/index.js
+@@ -0,0 +1,9 @@
++import Vue from "vue"
++import Vuex from "vuex"
++import * as module from "src/store/modules.js"
++
++Vue.use(Vuex)
++
++export default new Vuex.Store({
++  a: module.moduleA
++})
+\ No newline at end of file
+diff --git a/src/store/modules.js b/src/store/modules.js
+new file mode 100644
+index 0000000..2ff9175
+--- /dev/null
++++ b/src/store/modules.js
+@@ -0,0 +1,9 @@
++export const moduleA = {
++  state: {
++    message: "hello vuex"
++  },
++  mutations: {},
++  actions: {},
++  getters: {}
++}
++
