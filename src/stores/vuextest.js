@@ -20,13 +20,16 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    async setCodeAction(context, param){
+    async setCodeAction(context, params){
       const payload = {
         code: ""
       }
       const url = new URL("https://jsonplaceholder.typicode.com/posts")
       const seachParams = new URLSearchParams()
-      seachParams.append(param.key, param.value)
+      for (let key in params){
+        seachParams.append(key, params[key])
+      }
+      console.log(seachParams.toString())
       const response = await axios.get(url + `?${seachParams.toString()}`)
       payload.code = response.data[0].title
       context.commit("setCode", payload)
